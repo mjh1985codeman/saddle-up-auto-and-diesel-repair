@@ -6,7 +6,7 @@
 }
 
 body { 
-  background: url('./assets/Wood-bkg.png') no-repeat center center fixed; 
+  background: url('./assets/saddle-shop-bkgd.png') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -14,13 +14,14 @@ body {
   background-color: hsl(0, 0%, 0%);
 }
 
+/* Navigation Bar Stylings */
 
 .navbar-bkgd img { 
   margin-left: 1vh;
 }
 
 .navbar-link { 
-  color: hsl(0, 3%, 13%);
+  color:hsl(0, 0%, 0%);
   font-weight: bold;
   margin: 2vh;
 }
@@ -39,19 +40,38 @@ body {
 }
 
 .nav-bkg-img {
-  background: url('./assets/saddleup-header-bkgd.png');
-  height: 100%;
-  opacity: 0.9;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  border: 1px solid  hsl(0, 3%, 13%);;
+  background-color: hsla(0, 0%, 79%, 0.493);
+  
+ 
 }
 
 .nav-style img {
   max-height: 30vh;
 }
+/* 
+Media Query for the Logo:  */
+
+@media screen and (max-width: 991px) {
+  .nav-style img {
+    max-height: 20vh;
+  }
+}
+
+
+.nav-lnk-txt {
+  font-weight: bold;
+  color:hsl(0, 0%, 0%);
+}
+
+.nav-lnk-txt:hover {
+  
+ opacity: 0.5;
+ border-block: solid;
+
+}
+
+
+
 
 
 /* Hours Component Styling */

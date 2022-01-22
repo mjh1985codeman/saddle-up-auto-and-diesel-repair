@@ -23,22 +23,22 @@ const AppNavBar = () => {
               <Nav className="me-auto">
                 <Nav.Item>
                   <Nav.Link as={Link} to="/">
-                    Home
+                    <h4 className="nav-lnk-txt">Home</h4>
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link as={Link} to="/about">
-                    About
+                    <h4 className="nav-lnk-txt">About</h4>
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link as={Link} to="/services">
-                    Services
+                    <h4 className="nav-lnk-txt">Services</h4>
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link as={Link} to="/contact">
-                    Contact
+                    <h4 className="nav-lnk-txt">Contact</h4>
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
