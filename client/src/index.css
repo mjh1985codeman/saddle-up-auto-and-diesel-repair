@@ -36,3 +36,24 @@ body {
 .nav-style img {
   max-height: 20vh;
 }
+
+
+/* Hours Component Styling */
+
+.hours-comp {
+  margin: 1vh;
+}
+
+.hours-comp h2 {
+  padding: 1vh;
+  background: hsl(0, 14%, 85%);
+  border: 2px solid hsl(0, 3%, 13%);
+  opacity: 0.9;
+}
+
+.hours-tab-color {
+  background: hsl(0, 14%, 85%);
+  border: 2px solid hsl(0, 3%, 13%);
+  opacity: 0.9;
+}
+
