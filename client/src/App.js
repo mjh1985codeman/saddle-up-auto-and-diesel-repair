@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
-import Hours from "./components/Hours";
 import Services from "./components/pages/Services";
 import Contact from "./components/pages/Contact";
 
@@ -16,7 +15,6 @@ function App() {
     <>
       <BrowserRouter>
         <NavBar></NavBar>
-        <Hours></Hours>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />

@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body { 
@@ -42,6 +43,7 @@ body {
 
 .hours-comp {
   margin: 1vh;
+ 
 }
 
 .hours-comp h2 {
@@ -49,11 +51,17 @@ body {
   background: hsl(0, 14%, 85%);
   border: 2px solid hsl(0, 3%, 13%);
   opacity: 0.9;
+  font-weight: bold;
 }
 
 .hours-tab-color {
   background: hsl(0, 14%, 85%);
   border: 2px solid hsl(0, 3%, 13%);
   opacity: 0.9;
+  
 }
 
+.hours-tab-font {
+font-weight: bold;
+
+}

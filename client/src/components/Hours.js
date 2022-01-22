@@ -14,7 +14,7 @@ const Hours = () => {
                 <th>Close</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="hours-tab-font">
               <tr>
                 <td>Tuesday - Friday</td>
                 <td>8:00am</td>
@@ -27,7 +27,7 @@ const Hours = () => {
               </tr>
             </tbody>
           </Table>
-          <Card className="text-center hours-tab-color">
+          <Card className="text-center hours-tab-color hours-tab-font">
             <Card.Body>**Closed On Sunday and Monday**</Card.Body>
           </Card>
         </Container>
