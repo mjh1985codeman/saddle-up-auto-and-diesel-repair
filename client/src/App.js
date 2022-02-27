@@ -9,6 +9,7 @@ import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Services from "./components/pages/Services";
 import Contact from "./components/pages/Contact";
+import Reviews from "./components/pages/Reviews";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/about" element={<About />} />
           <Route exact path="/services" element={<Services />} />
           <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/reviews" element={<Reviews />} />
         </Routes>
       </BrowserRouter>
     </>

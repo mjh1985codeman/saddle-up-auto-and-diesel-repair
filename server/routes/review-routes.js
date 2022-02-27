@@ -42,6 +42,7 @@ reviewRoutes.route("/review/add").post(function (req, response) {
     review_body: req.body.review_body,
     //review_stars will be an Integer representative of the number of stars the user wants to leave
     review_stars: req.body.review_stars,
+    reviewer_name: req.body.reviewer_name,
   };
   db_connect.collection("reviews").insertOne(myobj, function (err, res) {
     if (err) throw err;

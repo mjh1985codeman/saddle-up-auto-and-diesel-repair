@@ -41,6 +41,11 @@ const AppNavBar = () => {
                     <h4 className="nav-lnk-txt">Contact</h4>
                   </Nav.Link>
                 </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link as={Link} to="/reviews">
+                    <h4 className="nav-lnk-txt">Reviews</h4>
+                  </Nav.Link>
+                </Nav.Item>
               </Nav>
             </div>
           </Navbar.Collapse>

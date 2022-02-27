@@ -106,3 +106,10 @@ font-weight: bold;
 .contact-form {
  margin: 1vh;
 }
+
+
+/* Review Box Styling */
+
+.review-box {
+  background-color: hsl(0, 0%, 100%);
+}
