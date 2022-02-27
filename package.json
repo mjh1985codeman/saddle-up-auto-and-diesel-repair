@@ -1,0 +1,29 @@
+{
+  "name": "saddle-up-auto-diesel-repair",
+  "version": "1.0.0",
+  "description": "## Small Business Project for a Local Repair Shop.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm start\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build": "cd client && npm run build"
+
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjh1985codeman/saddle-up-auto-and-diesel-repair.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mjh1985codeman/saddle-up-auto-and-diesel-repair/issues"
+  },
+  "homepage": "https://github.com/mjh1985codeman/saddle-up-auto-and-diesel-repair#readme",
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
