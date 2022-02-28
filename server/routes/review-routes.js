@@ -38,11 +38,10 @@ reviewRoutes.route("/reviews/:id").get(function (req, res) {
 reviewRoutes.route("/reviews/add").post(function (req, response) {
   let db_connect = dbo.getDb();
   let myobj = {
-    review_title: req.body.review_title,
-    review_body: req.body.review_body,
+    reviewText: req.body.reviewText,
     //review_stars will be an Integer representative of the number of stars the user wants to leave
-    review_stars: req.body.review_stars,
-    review_date: req.body.review_date,
+    reviewStars: req.body.reviewStars,
+    reviewDate: req.body.reviewDate,
   };
   db_connect.collection("reviews").insertOne(myobj, function (err, res) {
     if (err) throw err;

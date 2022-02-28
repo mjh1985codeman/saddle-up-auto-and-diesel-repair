@@ -12,7 +12,7 @@ const resolvers = {
   },
 
   Mutation: {
-    addReview: async (args) => {
+    addReview: async (parent, args) => {
       const review = await Review.create({
         ...args,
       });
