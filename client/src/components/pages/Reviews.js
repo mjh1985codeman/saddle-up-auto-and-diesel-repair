@@ -1,12 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
+import axios from "axios";
 import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
 import StarIcon from "@mui/icons-material/Star";
 import { Container } from "react-bootstrap";
+import ReviewList from "../ReviewList";
 
 const labels = {
-  0.5: "Useless",
-  1: "Useless+",
+  0.5: "Very Poor",
+  1: "Very Poor+",
   1.5: "Poor",
   2: "Poor+",
   2.5: "Ok",
@@ -52,6 +54,7 @@ const Reviews = () => {
           </Box>
         </div>
       </Container>
+      <ReviewList></ReviewList>
     </>
   );
 };

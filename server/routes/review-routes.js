@@ -13,7 +13,7 @@ const dbo = require("../config/connection");
 const ObjectId = require("mongodb").ObjectId;
 
 // This section will help you get a list of all the reviews.
-reviewRoutes.route("/review").get(function (req, res) {
+reviewRoutes.route("/reviews").get(function (req, res) {
   let db_connect = dbo.getDb("reviews");
   db_connect
     .collection("reviews")
@@ -25,7 +25,7 @@ reviewRoutes.route("/review").get(function (req, res) {
 });
 
 // This section will help you get a single review by id
-reviewRoutes.route("/review/:id").get(function (req, res) {
+reviewRoutes.route("/reviews/:id").get(function (req, res) {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId(req.params.id) };
   db_connect.collection("reviews").findOne(myquery, function (err, result) {
@@ -35,14 +35,14 @@ reviewRoutes.route("/review/:id").get(function (req, res) {
 });
 
 // This section will help you create a new review.
-reviewRoutes.route("/review/add").post(function (req, response) {
+reviewRoutes.route("/reviews/add").post(function (req, response) {
   let db_connect = dbo.getDb();
   let myobj = {
     review_title: req.body.review_title,
     review_body: req.body.review_body,
     //review_stars will be an Integer representative of the number of stars the user wants to leave
     review_stars: req.body.review_stars,
-    reviewer_name: req.body.reviewer_name,
+    review_date: req.body.review_date,
   };
   db_connect.collection("reviews").insertOne(myobj, function (err, res) {
     if (err) throw err;

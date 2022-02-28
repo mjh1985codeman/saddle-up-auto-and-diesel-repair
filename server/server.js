@@ -1,34 +1,43 @@
-//include express module or package
 const express = require("express");
-const cors = require("cors");
-//create instance of express
-const app = express();
+const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
+const cors = require("cors");
 
-require("dotenv").config({ path: "./config.env" });
-const port = process.env.PORT || 5000;
+const { typeDefs, resolvers } = require("./schemas");
+const db = require("./config/connection");
 
-app.use(cors());
+async function startApolloServer() {
+  const PORT = process.env.PORT || 3001;
+  const app = express();
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+  });
 
-app.use(express.json());
+  await server.start();
+  server.applyMiddleware({ app });
 
-app.use(require("./routes/review-routes", cors()));
-// import the database connection
-const dbo = require("./config/connection");
+  app.use(cors());
+  app.use(express.urlencoded({ extended: false }));
+  app.use(express.json());
 
-// Serve up static assets
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../client/build")));
+  // Serve up static assets
+  if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "../client/build")));
+  }
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  });
+
+  db.once("open", () => {
+    app.listen(PORT, () => {
+      console.log(`API server running on port ${PORT}!`);
+      console.log(
+        `Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`
+      );
+    });
+  });
 }
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
-
-app.listen(port, () => {
-  // perform a database connection when server starts
-  dbo.connectToServer(function (err) {
-    if (err) console.error(err);
-  });
-  console.log(`Server is running on port: ${port}`);
-});
+startApolloServer();
